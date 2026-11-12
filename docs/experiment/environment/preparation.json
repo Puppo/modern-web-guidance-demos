@@ -11,5 +11,6 @@
   "generation_model": null,
   "isolation_verified": false,
   "generation_runs": [],
-  "note": "Installed skill inspected; no CLI retrieval, agent generation, or browser evaluation performed. The current planning session is not suitable for a baseline run."
+  "note": "Installed skill inspected; no CLI retrieval, agent generation, or browser evaluation performed. The current planning session is not suitable for a baseline run.",
+  "starter_commit": "46fd5ea12d30f7f6d0ee09ac1cce3d4f8f2b9b06"
 }
