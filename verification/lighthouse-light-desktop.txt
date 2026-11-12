@@ -1,0 +1,18 @@
+Emulating viewport: {"deviceScaleFactor":1,"isMobile":false,"hasTouch":false,"isLandscape":false,"width":1440,"height":1100}
+Emulating color scheme: light
+## Lighthouse audit results
+Mode: snapshot
+Device: desktop
+URL: http://127.0.0.1:4173/
+### Category scores
+- Accessibility: 100 (accessibility)
+- Best Practices: 100 (best-practices)
+- SEO: 100 (seo)
+- Agentic Browsing: 100 (agentic-browsing)
+### Audit summary
+Passed: 28
+Failed: 0
+Total timing: 1282.75ms
+### Reports
+- /var/folders/5_/fjrhqkr97mn5ycd71_h5f9880000gn/T/chrome-devtools-mcp-Ne1uM9/report.json
+- /var/folders/5_/fjrhqkr97mn5ycd71_h5f9880000gn/T/chrome-devtools-mcp-Xj5CII/report.html

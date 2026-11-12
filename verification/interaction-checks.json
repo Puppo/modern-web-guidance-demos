@@ -1,0 +1,85 @@
+{
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+  "viewport": [
+    320,
+    740
+  ],
+  "results": [
+    {
+      "name": "Native modal opens with initial focus",
+      "pass": true
+    },
+    {
+      "name": "Background cannot receive focus",
+      "pass": true
+    },
+    {
+      "name": "Rejects empty display name",
+      "pass": true
+    },
+    {
+      "name": "Rejects whitespace-only display name",
+      "pass": true
+    },
+    {
+      "name": "Cancel bypasses validation and returns focus",
+      "pass": true
+    },
+    {
+      "name": "Profile updated as text, not HTML",
+      "pass": true
+    },
+    {
+      "name": "Profile persisted",
+      "pass": true
+    },
+    {
+      "name": "Save announced after modal closes",
+      "pass": true
+    },
+    {
+      "name": "Cancellation leaves saved profile intact",
+      "pass": true
+    },
+    {
+      "name": "Reopening restores saved values",
+      "pass": true
+    },
+    {
+      "name": "Theme preview does not persist",
+      "pass": true
+    },
+    {
+      "name": "Profile save does not persist draft theme",
+      "pass": true
+    },
+    {
+      "name": "Discard restores system theme",
+      "pass": true
+    },
+    {
+      "name": "Theme and independent notification settings persist",
+      "pass": true
+    },
+    {
+      "name": "System preference removes stored override",
+      "pass": true
+    },
+    {
+      "name": "Storage failure keeps UI usable and reports failure",
+      "pass": true
+    },
+    {
+      "name": "Saving recovers after storage becomes available",
+      "pass": true
+    },
+    {
+      "name": "Long profile content causes no horizontal overflow",
+      "pass": true
+    },
+    {
+      "name": "No animation at reduced motion or default",
+      "pass": true
+    }
+  ]
+}

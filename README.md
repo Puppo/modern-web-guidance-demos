@@ -38,3 +38,7 @@ Browser policy: Baseline Widely available as of 2026-11-12, with progressive enh
 This is a development preview created in the existing planning conversation, with prior knowledge of the briefs. It is **not** an isolated guided experiment and must not be compared with a baseline as if all generation conditions matched. The initial source snapshot is preserved as a separate commit before browser verification and fixes.
 
 Technical guidance references and test evidence live in `verification/`. Editorial briefs live separately in the blog checkout.
+
+## Checks
+
+Run `node --check app.js` for syntax validation. See [technical verification](verification/README.md) for repeatable browser checks, screenshots, observed results, and coverage limits.

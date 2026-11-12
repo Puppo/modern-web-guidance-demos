@@ -13,6 +13,8 @@ const systemScheme = matchMedia('(prefers-color-scheme: dark)');
 let announcementTimer;
 let pendingProfileMessage = '';
 let preferencesDirty = false;
+let externalChangePending = false;
+const externalChangeMessage = 'Preferences changed in another tab. Reload to load them; saving here will replace them.';
 
 function warn(message) {
   warning.textContent = message;
@@ -159,6 +161,8 @@ dialog.addEventListener('close', () => {
   profileForm.reset();
   clearNameError();
   if (wasSaved) announce(pendingProfileMessage); // The background is no longer inert.
+  else if (externalChangePending) announce(externalChangeMessage);
+  externalChangePending = false;
   pendingProfileMessage = '';
 });
 
@@ -166,8 +170,12 @@ dialog.addEventListener('close', () => {
 // No manual focus trap, inert toggling, or Escape handler: showModal owns those.
 window.addEventListener('storage', event => {
   if (event.key !== storageKey && event.key !== null) return;
-  if (preferencesDirty || dialog.open) {
-    announce('Preferences changed in another tab. Reload to load them; saving here will replace them.');
+  if (dialog.open) {
+    externalChangePending = true; // Announce only after the background becomes reachable.
+    return;
+  }
+  if (preferencesDirty) {
+    announce(externalChangeMessage);
     return;
   }
   saved = readSaved();

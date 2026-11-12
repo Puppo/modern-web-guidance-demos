@@ -48,9 +48,9 @@
           <legend>Choose your theme</legend>
           <p class="help" id="theme-help">Preview a theme, then save your preferences to keep it.</p>
           <div class="theme-grid">
-            <div class="theme-option"><input id="theme-system" type="radio" name="theme" value="system" checked aria-describedby="theme-help system-current"><label for="theme-system"><span class="theme-preview preview-system" aria-hidden="true"><span></span><span></span></span><span class="option-title">System</span><span class="option-description" id="system-current">Follow your device</span></label></div>
-            <div class="theme-option"><input id="theme-light" type="radio" name="theme" value="light" aria-describedby="theme-help"><label for="theme-light"><span class="theme-preview preview-light" aria-hidden="true"><span></span><span></span></span><span class="option-title">Light</span><span class="option-description">A fresh start</span></label></div>
-            <div class="theme-option"><input id="theme-dark" type="radio" name="theme" value="dark" aria-describedby="theme-help"><label for="theme-dark"><span class="theme-preview preview-dark" aria-hidden="true"><span></span><span></span></span><span class="option-title">Dark</span><span class="option-description">Easy evenings</span></label></div>
+            <div class="theme-option"><input id="theme-system" type="radio" aria-labelledby="theme-system-label" name="theme" value="system" checked aria-describedby="theme-help system-current"><label for="theme-system"><span class="theme-preview preview-system" aria-hidden="true"><span></span><span></span></span><span class="option-title" id="theme-system-label">System</span><span class="option-description" id="system-current">Follow your device</span></label></div>
+            <div class="theme-option"><input id="theme-light" type="radio" aria-labelledby="theme-light-label" name="theme" value="light" aria-describedby="theme-help"><label for="theme-light"><span class="theme-preview preview-light" aria-hidden="true"><span></span><span></span></span><span class="option-title" id="theme-light-label">Light</span><span class="option-description">A fresh start</span></label></div>
+            <div class="theme-option"><input id="theme-dark" type="radio" aria-labelledby="theme-dark-label" name="theme" value="dark" aria-describedby="theme-help"><label for="theme-dark"><span class="theme-preview preview-dark" aria-hidden="true"><span></span><span></span></span><span class="option-title" id="theme-dark-label">Dark</span><span class="option-description">Easy evenings</span></label></div>
           </div>
         </fieldset>
       </section>
@@ -58,8 +58,8 @@
         <div class="section-heading"><span class="section-number" aria-hidden="true">03</span><h3>Stay in the loop</h3></div>
         <fieldset class="notification-options">
           <legend class="visually-hidden">Notification preferences</legend>
-          <div class="check-row"><input id="email-notifications" type="checkbox" name="emailNotifications" aria-describedby="email-help"><label for="email-notifications"><span class="option-title">Email notifications</span><span class="help" id="email-help">A heads-up about activity that matters to you.</span></label></div>
-          <div class="check-row"><input id="product-updates" type="checkbox" name="productUpdates" aria-describedby="product-help"><label for="product-updates"><span class="option-title">Product updates</span><span class="help" id="product-help">Occasional notes on what’s new. No daily noise.</span></label></div>
+          <div class="check-row"><input id="email-notifications" type="checkbox" aria-labelledby="email-notifications-label" name="emailNotifications" aria-describedby="email-help"><label for="email-notifications"><span class="option-title" id="email-notifications-label">Email notifications</span><span class="help" id="email-help">A heads-up about activity that matters to you.</span></label></div>
+          <div class="check-row"><input id="product-updates" type="checkbox" aria-labelledby="product-updates-label" name="productUpdates" aria-describedby="product-help"><label for="product-updates"><span class="option-title" id="product-updates-label">Product updates</span><span class="help" id="product-help">Occasional notes on what’s new. No daily noise.</span></label></div>
         </fieldset>
       </section>
       <div class="save-row"><p id="dirty-state">You're all set.</p><div class="actions"><button type="button" id="reset-preferences" class="button secondary" disabled>Discard changes</button><button type="submit" id="save-preferences" class="button primary" disabled>Save preferences</button></div></div>

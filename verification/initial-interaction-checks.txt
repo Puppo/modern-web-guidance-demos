@@ -1,0 +1,4 @@
+Script ran on page and returned:
+```json
+{"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36","results":[{"name":"dialog opens modally with name focus","pass":true},{"name":"whitespace rejected","pass":true},{"name":"cancel ignores validation and returns focus","pass":true},{"name":"profile saved and text safe","pass":true},{"name":"saved status after close","pass":true},{"name":"cancel preserves saved profile","pass":true},{"name":"theme preview not persisted","pass":true},{"name":"discard restores system","pass":true},{"name":"theme and independent preferences persisted","pass":true},{"name":"blocked storage remains usable and truthful","pass":true},{"name":"no page overflow","pass":false}]}
+```
