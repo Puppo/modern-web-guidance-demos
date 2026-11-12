@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script>
+    // Apply only a valid saved override before the first paint. Storage may be blocked.
+    try {
+      const saved = JSON.parse(localStorage.getItem('mwg-preferences-v1'));
+      if (saved?.version === 1 && ['light', 'dark'].includes(saved.theme)) {
+        document.querySelector('meta[name="color-scheme"]').content = saved.theme;
+      }
+    } catch { /* The system theme remains usable. */ }
+  </script>
+  <title>Preferences — Common Ground</title>
+  <meta name="description" content="Make this space yours. Manage your profile, appearance, and notification preferences.">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand"><span class="brand-mark" aria-hidden="true">c/g</span> Common Ground</span>
+    <span class="header-note">Your space, your way.</span>
+  </header>
+  <main>
+    <div class="page-heading">
+      <p class="eyebrow">MAKE YOURSELF AT HOME</p>
+      <h1>Preferences<span aria-hidden="true">.</span></h1>
+      <p>A few small choices to make this space feel like you.</p>
+    </div>
+    <noscript><p class="notice">JavaScript is needed to edit and save these preferences. Your current system theme is still respected.</p></noscript>
+    <p id="storage-warning" class="notice" hidden></p>
+    <section class="panel profile-panel">
+      <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2>Your profile</h2></div>
+      <div class="profile-content">
+        <div id="avatar" class="avatar" aria-hidden="true">JM</div>
+        <div class="profile-copy"><p id="profile-name" class="profile-name">Jamie Morgan</p><p id="profile-bio">Curious by nature. Usually out for a walk.</p></div>
+        <button id="edit-profile" class="button secondary" type="button" disabled>Edit profile <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+    <form id="preferences-form" aria-labelledby="preferences-heading">
+      <h2 id="preferences-heading" class="visually-hidden">Your preferences</h2>
+      <section class="panel">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">02</span><h3>Appearance</h3></div>
+        <fieldset class="theme-options">
+          <legend>Choose your theme</legend>
+          <p class="help" id="theme-help">Preview a theme, then save your preferences to keep it.</p>
+          <div class="theme-grid">
+            <div class="theme-option"><input id="theme-system" type="radio" name="theme" value="system" checked aria-describedby="theme-help system-current"><label for="theme-system"><span class="theme-preview preview-system" aria-hidden="true"><span></span><span></span></span><span class="option-title">System</span><span class="option-description" id="system-current">Follow your device</span></label></div>
+            <div class="theme-option"><input id="theme-light" type="radio" name="theme" value="light" aria-describedby="theme-help"><label for="theme-light"><span class="theme-preview preview-light" aria-hidden="true"><span></span><span></span></span><span class="option-title">Light</span><span class="option-description">A fresh start</span></label></div>
+            <div class="theme-option"><input id="theme-dark" type="radio" name="theme" value="dark" aria-describedby="theme-help"><label for="theme-dark"><span class="theme-preview preview-dark" aria-hidden="true"><span></span><span></span></span><span class="option-title">Dark</span><span class="option-description">Easy evenings</span></label></div>
+          </div>
+        </fieldset>
+      </section>
+      <section class="panel">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">03</span><h3>Stay in the loop</h3></div>
+        <fieldset class="notification-options">
+          <legend class="visually-hidden">Notification preferences</legend>
+          <div class="check-row"><input id="email-notifications" type="checkbox" name="emailNotifications" aria-describedby="email-help"><label for="email-notifications"><span class="option-title">Email notifications</span><span class="help" id="email-help">A heads-up about activity that matters to you.</span></label></div>
+          <div class="check-row"><input id="product-updates" type="checkbox" name="productUpdates" aria-describedby="product-help"><label for="product-updates"><span class="option-title">Product updates</span><span class="help" id="product-help">Occasional notes on what’s new. No daily noise.</span></label></div>
+        </fieldset>
+      </section>
+      <div class="save-row"><p id="dirty-state">You're all set.</p><div class="actions"><button type="button" id="reset-preferences" class="button secondary" disabled>Discard changes</button><button type="submit" id="save-preferences" class="button primary" disabled>Save preferences</button></div></div>
+    </form>
+    <p id="save-status" role="status" class="save-status"></p>
+  </main>
+  <footer><p>Kept on this device. Made for you.</p><p>This demo sends no emails and uploads no profile data.</p></footer>
+  <dialog id="profile-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-help" closedby="any">
+    <form id="profile-form" method="dialog" aria-labelledby="dialog-title">
+      <p class="eyebrow">A LITTLE ABOUT YOU</p><h2 id="dialog-title">Edit your profile</h2>
+      <p id="dialog-help" class="help">Make it yours. Canceling or dismissing discards your edits.</p>
+      <div class="field"><label for="display-name">Display name <span class="help">(required)</span></label><p id="name-help" class="help">Up to 60 characters.</p><input id="display-name" name="displayName" autocomplete="nickname" required maxlength="60" pattern=".*\S.*" aria-describedby="name-help name-error" autofocus><p id="name-error" class="error" aria-live="polite"></p></div>
+      <div class="field"><label for="bio">Bio <span class="help">(optional)</span></label><p id="bio-help" class="help">A little introduction, up to 240 characters.</p><textarea id="bio" name="bio" rows="3" maxlength="240" aria-describedby="bio-help"></textarea></div>
+      <div class="dialog-actions"><button type="submit" class="button secondary" value="cancel" formnovalidate>Cancel</button><button type="submit" class="button primary" value="save">Save profile</button></div>
+    </form>
+  </dialog>
+</body>
+</html>
