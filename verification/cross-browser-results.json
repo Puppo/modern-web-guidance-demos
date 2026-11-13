@@ -1,0 +1,287 @@
+{
+  "date": "2026-11-13",
+  "starting_revision": "df397eb",
+  "source_sha256": {
+    "app.js": "b279567db8b9805b832202c73d21c8e09ebf357ab92c223a4e55ec4ef6607a5d",
+    "index.html": "324a24e9276e29984a394faca236686a9dcdc6617b6aca8e169d9ef1d2c8f84b",
+    "styles.css": "2a395b96d63dcb5519bb768e22babe3e36d4e04867cafe5410941fddb7df43fa",
+    "playwright.config.js": "abd89897c20c46964655e12526b679187ba461ea42497d8266b58315d8f90250",
+    "tests/preferences.spec.js": "8a335cef86947f740fa223382d2870ca950fe74af592565572b07dadeaf27031",
+    "tests/browser-checks.js": "a99a9e713737c563cd85f574ee30012555652ee02c521467a227f8b283a050cd",
+    "package-lock.json": "ba8bbfa859de3557c0684c18b60eaa776590f3967bb545b2d63f8907494606cf"
+  },
+  "passed": 45,
+  "failed": 0,
+  "results": [
+    {
+      "browser": "chromium",
+      "test": "existing 19 interaction checks pass in a narrow viewport",
+      "status": "passed",
+      "duration_ms": 2050
+    },
+    {
+      "browser": "firefox",
+      "test": "existing 19 interaction checks pass in a narrow viewport",
+      "status": "passed",
+      "duration_ms": 3297
+    },
+    {
+      "browser": "webkit",
+      "test": "existing 19 interaction checks pass in a narrow viewport",
+      "status": "passed",
+      "duration_ms": 2575
+    },
+    {
+      "browser": "chromium",
+      "test": "keyboard opens, traverses, cancels and restores focus",
+      "status": "passed",
+      "duration_ms": 561
+    },
+    {
+      "browser": "firefox",
+      "test": "keyboard opens, traverses, cancels and restores focus",
+      "status": "passed",
+      "duration_ms": 1851
+    },
+    {
+      "browser": "webkit",
+      "test": "keyboard opens, traverses, cancels and restores focus",
+      "status": "passed",
+      "duration_ms": 1182
+    },
+    {
+      "browser": "chromium",
+      "test": "radio arrows and checkbox space retain native behavior",
+      "status": "passed",
+      "duration_ms": 534
+    },
+    {
+      "browser": "firefox",
+      "test": "radio arrows and checkbox space retain native behavior",
+      "status": "passed",
+      "duration_ms": 1777
+    },
+    {
+      "browser": "webkit",
+      "test": "radio arrows and checkbox space retain native behavior",
+      "status": "passed",
+      "duration_ms": 1030
+    },
+    {
+      "browser": "chromium",
+      "test": "outside dismissal is optional and discards draft when supported",
+      "status": "passed",
+      "duration_ms": 222
+    },
+    {
+      "browser": "firefox",
+      "test": "outside dismissal is optional and discards draft when supported",
+      "status": "passed",
+      "duration_ms": 624
+    },
+    {
+      "browser": "webkit",
+      "test": "outside dismissal is optional and discards draft when supported",
+      "status": "passed",
+      "duration_ms": 417
+    },
+    {
+      "browser": "chromium",
+      "test": "profile and preferences survive reload",
+      "status": "passed",
+      "duration_ms": 374
+    },
+    {
+      "browser": "firefox",
+      "test": "profile and preferences survive reload",
+      "status": "passed",
+      "duration_ms": 520
+    },
+    {
+      "browser": "webkit",
+      "test": "profile and preferences survive reload",
+      "status": "passed",
+      "duration_ms": 751
+    },
+    {
+      "browser": "chromium",
+      "test": "theme follows system while explicit override survives changes",
+      "status": "passed",
+      "duration_ms": 252
+    },
+    {
+      "browser": "firefox",
+      "test": "theme follows system while explicit override survives changes",
+      "status": "passed",
+      "duration_ms": 370
+    },
+    {
+      "browser": "webkit",
+      "test": "theme follows system while explicit override survives changes",
+      "status": "passed",
+      "duration_ms": 586
+    },
+    {
+      "browser": "chromium",
+      "test": "clean tabs synchronize saved preferences",
+      "status": "passed",
+      "duration_ms": 454
+    },
+    {
+      "browser": "firefox",
+      "test": "clean tabs synchronize saved preferences",
+      "status": "passed",
+      "duration_ms": 608
+    },
+    {
+      "browser": "webkit",
+      "test": "clean tabs synchronize saved preferences",
+      "status": "passed",
+      "duration_ms": 769
+    },
+    {
+      "browser": "chromium",
+      "test": "saving local preferences preserves a profile saved by another tab",
+      "status": "passed",
+      "duration_ms": 751
+    },
+    {
+      "browser": "firefox",
+      "test": "saving local preferences preserves a profile saved by another tab",
+      "status": "passed",
+      "duration_ms": 1020
+    },
+    {
+      "browser": "webkit",
+      "test": "saving local preferences preserves a profile saved by another tab",
+      "status": "passed",
+      "duration_ms": 995
+    },
+    {
+      "browser": "chromium",
+      "test": "saving profile draft preserves preferences saved by another tab",
+      "status": "passed",
+      "duration_ms": 437
+    },
+    {
+      "browser": "firefox",
+      "test": "saving profile draft preserves preferences saved by another tab",
+      "status": "passed",
+      "duration_ms": 1049
+    },
+    {
+      "browser": "webkit",
+      "test": "saving profile draft preserves preferences saved by another tab",
+      "status": "passed",
+      "duration_ms": 948
+    },
+    {
+      "browser": "chromium",
+      "test": "blocked storage at startup leaves editing usable",
+      "status": "passed",
+      "duration_ms": 389
+    },
+    {
+      "browser": "firefox",
+      "test": "blocked storage at startup leaves editing usable",
+      "status": "passed",
+      "duration_ms": 657
+    },
+    {
+      "browser": "webkit",
+      "test": "blocked storage at startup leaves editing usable",
+      "status": "passed",
+      "duration_ms": 559
+    },
+    {
+      "browser": "chromium",
+      "test": "corrupt saved data is recoverable",
+      "status": "passed",
+      "duration_ms": 205
+    },
+    {
+      "browser": "firefox",
+      "test": "corrupt saved data is recoverable",
+      "status": "passed",
+      "duration_ms": 597
+    },
+    {
+      "browser": "webkit",
+      "test": "corrupt saved data is recoverable",
+      "status": "passed",
+      "duration_ms": 398
+    },
+    {
+      "browser": "chromium",
+      "test": "without JavaScript system theme works and editing is explained",
+      "status": "passed",
+      "duration_ms": 288
+    },
+    {
+      "browser": "firefox",
+      "test": "without JavaScript system theme works and editing is explained",
+      "status": "passed",
+      "duration_ms": 737
+    },
+    {
+      "browser": "webkit",
+      "test": "without JavaScript system theme works and editing is explained",
+      "status": "passed",
+      "duration_ms": 698
+    },
+    {
+      "browser": "chromium",
+      "test": "doubled text reflows without page or dialog overflow",
+      "status": "passed",
+      "duration_ms": 238
+    },
+    {
+      "browser": "firefox",
+      "test": "doubled text reflows without page or dialog overflow",
+      "status": "passed",
+      "duration_ms": 424
+    },
+    {
+      "browser": "webkit",
+      "test": "doubled text reflows without page or dialog overflow",
+      "status": "passed",
+      "duration_ms": 408
+    },
+    {
+      "browser": "chromium",
+      "test": "canceling a profile draft reveals the other tab update",
+      "status": "passed",
+      "duration_ms": 442
+    },
+    {
+      "browser": "firefox",
+      "test": "canceling a profile draft reveals the other tab update",
+      "status": "passed",
+      "duration_ms": 841
+    },
+    {
+      "browser": "webkit",
+      "test": "canceling a profile draft reveals the other tab update",
+      "status": "passed",
+      "duration_ms": 889
+    },
+    {
+      "browser": "chromium",
+      "test": "discarding a local preference draft restores the latest remote settings",
+      "status": "passed",
+      "duration_ms": 546
+    },
+    {
+      "browser": "firefox",
+      "test": "discarding a local preference draft restores the latest remote settings",
+      "status": "passed",
+      "duration_ms": 933
+    },
+    {
+      "browser": "webkit",
+      "test": "discarding a local preference draft restores the latest remote settings",
+      "status": "passed",
+      "duration_ms": 951
+    }
+  ]
+}

@@ -2,6 +2,10 @@
 
 Checked on 2026-11-12 in Chrome 157 on macOS through Chrome DevTools. This is a guided development preview, not an isolated comparison run.
 
+## Follow-up verification — 2026-11-13
+
+The refined branch now passes 45 Playwright tests (15 scenarios on Chromium, Firefox, and WebKit). See [cross-browser findings](cross-browser.md), [results](cross-browser-results.json), and [environment](browser-environment.json). The original observations below are retained as history; the follow-up supersedes their cross-browser, keyboard, no-JavaScript, and multi-tab coverage gaps.
+
 ## Preserved source
 
 Initial implementation: `4fc091d` (before browser verification and fixes). Subsequent changes shorten accessible names to avoid repeating descriptions and delay cross-tab announcements until a modal is closed. The initial source remains in Git history.
@@ -24,12 +28,12 @@ Lighthouse snapshot audits: accessibility, best practices, SEO, and agentic brow
 
 The first exploratory script incorrectly compared scrollWidth with innerWidth, flagging the width of the vertical scrollbar as overflow. Actual measurements were scrollWidth = clientWidth = 1425, innerWidth = 1440. The repeatable check now compares scrollWidth with clientWidth. The original observation is preserved in `initial-interaction-checks.txt`.
 
-## Outstanding
+## Remaining verification gaps
 
 - Actual screen-reader testing and spoken announcements.
-- Safari, Firefox, real mobile devices, browser zoom at 200%, and no-JavaScript runtime checks.
-- Full keyboard traversal and pointer-based outside dismissal.
-- Older browser fallback execution and real multi-tab conflicts.
+- Branded Safari and Firefox releases and real mobile devices; Playwright engine builds were tested.
+- Native browser zoom at 200%; text enlargement at 200% was tested, which is distinct.
+- Older browser fallback execution and truly simultaneous cross-tab writes.
 - Performance tracing.
 
 ## Reproduce the scripted checks

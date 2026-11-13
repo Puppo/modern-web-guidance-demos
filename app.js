@@ -14,7 +14,7 @@ let announcementTimer;
 let pendingProfileMessage = '';
 let preferencesDirty = false;
 let externalChangePending = false;
-const externalChangeMessage = 'Preferences changed in another tab. Reload to load them; saving here will replace them.';
+const externalChangeMessage = 'Saved settings changed in another tab. Your draft is kept; saving applies your current choices.';
 
 function warn(message) {
   warning.textContent = message;
@@ -170,17 +170,21 @@ dialog.addEventListener('close', () => {
 // No manual focus trap, inert toggling, or Escape handler: showModal owns those.
 window.addEventListener('storage', event => {
   if (event.key !== storageKey && event.key !== null) return;
+  // Refresh the saved baseline without replacing a form the user is editing.
+  // A later save then preserves the other form's most recently saved data.
+  const keepPreferenceDraft = preferencesDirty;
+  saved = readSaved();
+  renderProfile();
+  if (!keepPreferenceDraft) renderPreferences();
+  else updateDirty();
   if (dialog.open) {
     externalChangePending = true; // Announce only after the background becomes reachable.
     return;
   }
-  if (preferencesDirty) {
+  if (keepPreferenceDraft) {
     announce(externalChangeMessage);
     return;
   }
-  saved = readSaved();
-  renderProfile();
-  renderPreferences();
   announce('Preferences updated from another tab.');
 });
 

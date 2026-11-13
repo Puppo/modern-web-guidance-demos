@@ -1,0 +1,12 @@
+{
+  "name": "modern-web-guidance-demos",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "test:report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0"
+  }
+}

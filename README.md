@@ -1,4 +1,4 @@
-# Common Ground — user preferences demo
+# Common Ground — refined user preferences demo
 
 A small settings page built with vanilla HTML, CSS, and JavaScript, using Modern Web Guidance. No build step, external fonts, or runtime dependencies.
 
@@ -22,6 +22,12 @@ Open http://127.0.0.1:4173. Keep this origin consistent: browser storage is orig
 
 Data stays in this browser under `mwg-preferences-v1`. Remove that key in DevTools to reset. Nothing is uploaded. JavaScript is needed for editing and persistence; the page explains this if it is disabled.
 
+## Changes in this version
+
+This branch starts from `article-1/guided` at `df397eb`. It fixes a reproduced two-tab data-loss bug: receiving remote changes now refreshes saved state while preserving the current form draft. Saving one form no longer overwrites an already received change to the other form. Cancel and Discard restore the latest received saved values.
+
+Concurrent edits to the same form remain last-save-wins. This local demo does not provide transactional synchronization for simultaneous writes.
+
 ## Implementation
 
 - Native `<dialog>` and `showModal()` supply modal semantics and focus behavior. `closedby="any"` is optional: Cancel and Escape remain available without it.
@@ -41,4 +47,16 @@ Technical guidance references and test evidence live in `verification/`. Editori
 
 ## Checks
 
-Run `node --check app.js` for syntax validation. See [technical verification](verification/README.md) for repeatable browser checks, screenshots, observed results, and coverage limits.
+The demo still needs only a static server. Node.js and npm are optional, for the automated tests:
+
+```sh
+npm ci
+npx playwright install chromium firefox webkit
+npm test
+```
+
+The test runner starts its own Python 3 server on port 4174 and uses isolated browser contexts. It does not reuse or clear your personal browser data. Playwright is a development dependency only.
+
+Run `npm run test:report` to inspect the latest local report. Traces and screenshots are retained on failure in ignored output directories. Committed verification summaries record the tested source hashes and browser versions.
+
+See [technical verification](verification/README.md) and [cross-browser findings](verification/cross-browser.md) for evidence and coverage limits.

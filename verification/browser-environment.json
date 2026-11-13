@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-13",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "node": "v26.13.0",
+  "playwright": "1.65.0",
+  "browsers": {
+    "chromium": "158.0.8127.18",
+    "firefox": "159.0",
+    "webkit": "27.2"
+  }
+}
