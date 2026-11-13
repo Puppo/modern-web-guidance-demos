@@ -40,3 +40,9 @@ The initial exploratory reports and full final report are retained locally in ig
 ## Still outstanding
 
 Manual screen-reader testing, actual Safari/iOS and Android devices, native browser zoom, older feature-fallback paths, and performance profiling. Automated success does not establish full accessibility compliance.
+
+## Node-only tooling follow-up
+
+The local demo and test server now use pinned `http-server@14.1.1`, with Node.js 26+ required and `.nvmrc` set to 26. Both demo branches were smoke-tested with `npm ci` and `npm start`. The application sources are unchanged.
+
+On Node.js 26.13.0, the first default parallel run passed 43 tests and timed out on two Firefox scenarios (canceling a profile draft and discarding preferences). A full rerun with `npm test -- --workers=1` passed all 45 tests. The timeout cause was not established; this is not a claim that parallel flakiness is resolved. See `node-server-results.json` for this follow-up; earlier evidence remains unchanged.

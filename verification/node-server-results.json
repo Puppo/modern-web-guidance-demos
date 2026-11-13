@@ -1,0 +1,28 @@
+{
+  "node": "v26.13.0",
+  "command": "npm test -- --workers=1",
+  "server": "http-server@14.1.1",
+  "stats": {
+    "startTime": "2026-11-13T14:05:32.869Z",
+    "duration": 36785.794,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceHashes": {
+    "index.html": "324a24e9276e29984a394faca236686a9dcdc6617b6aca8e169d9ef1d2c8f84b",
+    "app.js": "b279567db8b9805b832202c73d21c8e09ebf357ab92c223a4e55ec4ef6607a5d",
+    "styles.css": "2a395b96d63dcb5519bb768e22babe3e36d4e04867cafe5410941fddb7df43fa",
+    "package.json": "cd5909d2d62b6692e379ed184fa660209206b899a87f1f5f2ccb64fca12c35dd",
+    "package-lock.json": "9a9c6b53928dfc51005a08e65e5d162daff3d593c55bf0f5ea806c93cb7fe7aa",
+    "playwright.config.js": "f513c881b7763b6a93d75e9af19d587798afecf510360152b5b40e72f20d93d0",
+    "tests/preferences.spec.js": "8a335cef86947f740fa223382d2870ca950fe74af592565572b07dadeaf27031"
+  },
+  "firstRun": {
+    "command": "npm test",
+    "passed": 43,
+    "failed": 2,
+    "failures": "Firefox timeouts in canceling a profile draft and discarding a preference draft; both passed in the serial rerun. Cause not established."
+  }
+}

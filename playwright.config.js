@@ -15,7 +15,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
   webServer: {
-    command: 'python3 -m http.server 4174 --bind 127.0.0.1',
+    command: 'npm run start:test',
     url: 'http://127.0.0.1:4174',
     reuseExistingServer: false,
     stdout: 'ignore',

@@ -4,13 +4,14 @@ A small settings page built with vanilla HTML, CSS, and JavaScript, using Modern
 
 ## Run locally
 
-From this directory, with Python 3 installed:
+From this directory, with Node.js 26 or newer and npm installed:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+npm ci
+npm start
 ```
 
-Open http://127.0.0.1:4173. Keep this origin consistent: browser storage is origin-specific. Stop the server with Ctrl+C.
+Open http://127.0.0.1:4173. Keep this origin consistent: browser storage is origin-specific. Stop the server with Ctrl+C. The pinned `http-server` package is a development dependency; the browser application still has no runtime dependencies.
 
 ## Try it
 
@@ -47,7 +48,7 @@ Technical guidance references and test evidence live in `verification/`. Editori
 
 ## Checks
 
-The demo still needs only a static server. Node.js and npm are optional, for the automated tests:
+Use the same Node.js environment to run the automated tests:
 
 ```sh
 npm ci
@@ -55,7 +56,7 @@ npx playwright install chromium firefox webkit
 npm test
 ```
 
-The test runner starts its own Python 3 server on port 4174 and uses isolated browser contexts. It does not reuse or clear your personal browser data. Playwright is a development dependency only.
+The test runner starts its own Node.js static server on port 4174 and uses isolated browser contexts. It does not reuse or clear your personal browser data. Playwright is a development dependency only.
 
 Run `npm run test:report` to inspect the latest local report. Traces and screenshots are retained on failure in ignored output directories. Committed verification summaries record the tested source hashes and browser versions.
 
