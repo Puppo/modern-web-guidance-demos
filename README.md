@@ -9,10 +9,10 @@ Standalone HTML, CSS, and JavaScript examples by Luca Del Puppo.
 | `main` | Repository navigation and technical documentation |
 | `experiment/starter` | Shared minimal starter |
 | `article-1/baseline` | Reserved for an independent run without the skill; no implementation yet |
-| `article-1/guided` | Preserved initial guided demo (`df397eb`) |
+| `article-1/guided` | Initial guided demo (application checkpoint `df397eb`) |
 | `article-2/refined` | Multi-tab fix and 45 passing cross-browser tests |
 
-Check out a demo branch and follow its README to run it locally. No build step or runtime dependencies are required.
+With Git, Node.js 26 or newer, and npm installed, check out a demo branch and run `npm ci` followed by `npm start`. No build step or browser runtime dependencies are required.
 
 The guided branch is a development preview made in the planning session, not a controlled experiment result. No baseline comparison has been performed.
 
