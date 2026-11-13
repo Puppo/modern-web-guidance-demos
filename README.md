@@ -4,13 +4,14 @@ A small settings page built with vanilla HTML, CSS, and JavaScript, using Modern
 
 ## Run locally
 
-From this directory, with Python 3 installed:
+From this directory, with Node.js 26 or newer and npm installed:
 
 ```sh
-python3 -m http.server 4173 --bind 127.0.0.1
+npm ci
+npm start
 ```
 
-Open http://127.0.0.1:4173. Keep this origin consistent: browser storage is origin-specific. Stop the server with Ctrl+C.
+Open http://127.0.0.1:4173. Keep this origin consistent: browser storage is origin-specific. Stop the server with Ctrl+C. The pinned `http-server` package is a development dependency; the browser application still has no runtime dependencies.
 
 ## Try it
 
