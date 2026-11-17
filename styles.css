@@ -123,7 +123,9 @@ dialog h2 { font-size: 1.75rem; line-height: 1.2; margin-block-end: .75rem; }
 .field label { display: block; font-size: .9rem; font-weight: 600; }
 .field .help { margin-block: .25rem .4rem; }
 .field input, textarea { inline-size: 100%; min-block-size: 3rem; border: 1px solid var(--control); border-radius: .4rem; padding: .65rem .8rem; color: var(--text); background: var(--page); }
-textarea { resize: vertical; }
+textarea { resize: vertical; min-block-size: 3lh; max-block-size: 7lh; overflow: auto; }
+/* Teaching fixture: untouched required fields immediately receive an error border. */
+#profile-form input:invalid { border-color: var(--error); }
 [aria-invalid="true"] { border-color: var(--error) !important; }
 .error { color: var(--error); font-size: .875rem; min-block-size: 1.3em; margin-block-start: .3rem; }
 .dialog-actions { justify-content: flex-end; margin-block-start: 1.5rem; }

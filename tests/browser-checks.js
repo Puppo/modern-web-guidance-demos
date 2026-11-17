@@ -29,23 +29,23 @@ async function checkPreferences() {
   $('#bio').value = '<b>Plain text</b>';
   submitProfile(); await settle();
   check('Profile updated as text, not HTML', $('#profile-name').textContent === 'Taylor Example' && $('#profile-bio').textContent === '<b>Plain text</b>' && !$('#profile-bio b'));
-  check('Profile persisted', JSON.parse(localStorage.getItem('mwg-preferences-v1')).profile.displayName === 'Taylor Example');
+  check('Profile persisted', JSON.parse(localStorage.getItem('mwg-modernization-v1')).profile.displayName === 'Taylor Example');
   check('Save announced after modal closes', !dialog.open && $('#save-status').textContent === 'Profile saved on this device.');
   open(); $('#display-name').value = 'Discard me'; cancel(); await settle();
   check('Cancellation leaves saved profile intact', $('#profile-name').textContent === 'Taylor Example');
   open(); check('Reopening restores saved values', $('#display-name').value === 'Taylor Example'); cancel(); await settle();
 
   $('#theme-dark').click();
-  check('Theme preview does not persist', $('meta[name="color-scheme"]').content === 'dark' && !JSON.parse(localStorage.getItem('mwg-preferences-v1')).theme);
+  check('Theme preview does not persist', $('meta[name="color-scheme"]').content === 'dark' && !JSON.parse(localStorage.getItem('mwg-modernization-v1')).theme);
   open(); $('#bio').value = 'Profile-only change'; submitProfile(); await settle();
-  check('Profile save does not persist draft theme', !JSON.parse(localStorage.getItem('mwg-preferences-v1')).theme);
+  check('Profile save does not persist draft theme', !JSON.parse(localStorage.getItem('mwg-modernization-v1')).theme);
   $('#reset-preferences').click();
   check('Discard restores system theme', $('meta[name="color-scheme"]').content === 'light dark');
   $('#theme-dark').click(); $('#email-notifications').click(); $('#preferences-form').requestSubmit(); await settle();
-  const saved = JSON.parse(localStorage.getItem('mwg-preferences-v1'));
+  const saved = JSON.parse(localStorage.getItem('mwg-modernization-v1'));
   check('Theme and independent notification settings persist', saved.theme === 'dark' && saved.emailNotifications && !saved.productUpdates);
   $('#theme-system').click(); $('#preferences-form').requestSubmit(); await settle();
-  check('System preference removes stored override', !Object.hasOwn(JSON.parse(localStorage.getItem('mwg-preferences-v1')), 'theme'));
+  check('System preference removes stored override', !Object.hasOwn(JSON.parse(localStorage.getItem('mwg-modernization-v1')), 'theme'));
 
   const setItem = Storage.prototype.setItem;
   try {

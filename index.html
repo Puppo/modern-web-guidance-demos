@@ -7,7 +7,7 @@
   <script>
     // Apply only a valid saved override before the first paint. Storage may be blocked.
     try {
-      const saved = JSON.parse(localStorage.getItem('mwg-preferences-v1'));
+      const saved = JSON.parse(localStorage.getItem('mwg-modernization-v1'));
       if (saved?.version === 1 && ['light', 'dark'].includes(saved.theme)) {
         document.querySelector('meta[name="color-scheme"]').content = saved.theme;
       }
@@ -35,8 +35,8 @@
     <section class="panel profile-panel">
       <div class="section-heading"><span class="section-number" aria-hidden="true">01</span><h2>Your profile</h2></div>
       <div class="profile-content">
-        <div id="avatar" class="avatar" aria-hidden="true">JM</div>
-        <div class="profile-copy"><p id="profile-name" class="profile-name">Jamie Morgan</p><p id="profile-bio">Curious by nature. Usually out for a walk.</p></div>
+        <div id="avatar" class="avatar" aria-hidden="true">—</div>
+        <div class="profile-copy"><p id="profile-name" class="profile-name">Your profile</p><p id="profile-bio">A little mystery. No bio yet.</p></div>
         <button id="edit-profile" class="button secondary" type="button" disabled>Edit profile <span aria-hidden="true">↗</span></button>
       </div>
     </section>

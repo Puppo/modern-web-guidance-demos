@@ -1,5 +1,5 @@
-const storageKey = 'mwg-preferences-v1';
-const defaults = { version: 1, profile: { displayName: 'Jamie Morgan', bio: 'Curious by nature. Usually out for a walk.' }, emailNotifications: false, productUpdates: false };
+const storageKey = 'mwg-modernization-v1';
+const defaults = { version: 1, profile: { displayName: '', bio: '' }, emailNotifications: false, productUpdates: false };
 const preferencesForm = document.querySelector('#preferences-form');
 const dialog = document.querySelector('#profile-dialog');
 const profileForm = document.querySelector('#profile-form');
@@ -29,7 +29,7 @@ function announce(message) {
 
 function normalize(value) {
   if (!value || value.version !== 1 || typeof value.profile?.displayName !== 'string' ||
-      !value.profile.displayName.trim() || value.profile.displayName.length > 60 ||
+      value.profile.displayName.length > 60 ||
       typeof value.profile.bio !== 'string' || value.profile.bio.length > 240 ||
       typeof value.emailNotifications !== 'boolean' || typeof value.productUpdates !== 'boolean' ||
       (value.theme !== undefined && !['light', 'dark'].includes(value.theme))) {
@@ -69,9 +69,9 @@ function applyTheme(theme) {
 }
 
 function renderProfile() {
-  document.querySelector('#profile-name').textContent = saved.profile.displayName;
+  document.querySelector('#profile-name').textContent = saved.profile.displayName || 'Your profile';
   document.querySelector('#profile-bio').textContent = saved.profile.bio || 'A little mystery. No bio yet.';
-  document.querySelector('#avatar').textContent = saved.profile.displayName.split(/\s+/u).slice(0, 2).map(part => [...part][0]).join('').toLocaleUpperCase();
+  document.querySelector('#avatar').textContent = saved.profile.displayName.split(/\s+/u).slice(0, 2).map(part => [...part][0]).join('').toLocaleUpperCase() || '—';
 }
 
 function draftPreferences() {
@@ -136,6 +136,15 @@ nameInput.addEventListener('input', () => {
   if (nameInput.validity.valid) clearNameError();
 });
 
+// Teaching fixture: this measurement-based resize is intentionally unconditional.
+function resizeBio() {
+  bioInput.style.height = 'auto';
+  const borderHeight = bioInput.offsetHeight - bioInput.clientHeight;
+  bioInput.style.height = (bioInput.scrollHeight + borderHeight) + 'px';
+}
+
+bioInput.addEventListener('input', resizeBio);
+
 document.querySelector('#edit-profile').addEventListener('click', () => {
   clearTimeout(announcementTimer);
   status.textContent = '';
@@ -144,6 +153,7 @@ document.querySelector('#edit-profile').addEventListener('click', () => {
   clearNameError();
   dialog.returnValue = '';
   dialog.showModal();
+  resizeBio();
 });
 
 profileForm.addEventListener('submit', event => {

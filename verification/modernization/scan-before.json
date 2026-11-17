@@ -1,0 +1,72 @@
+{
+  "targetDir": ".",
+  "totalFindings": 2,
+  "guides": [
+    {
+      "guideId": "form-fields-automatically-fit-contents",
+      "retrieveCommand": "npx modern-web-guidance retrieve form-fields-automatically-fit-contents",
+      "count": 1,
+      "rules": [
+        {
+          "ruleId": "form-fields-automatically-fit-contents",
+          "summary": "Imperative JavaScript auto-resizing of textareas and inputs using scrollHeight or autosize() should be replaced with CSS field-sizing: content.",
+          "verifierRubric": {
+            "keepWhen": [
+              "A keyup, input, change, or keydown event listener dynamically recalculates a textarea or text input height/width using scrollHeight or scrollWidth to auto-expand the field as the user types.",
+              "A helper function resets .style.height to \"auto\", \"0px\", or \"1px\" and sets it to scrollHeight to fit contents.",
+              "The application invokes the autosize() library on a textarea or input collection."
+            ],
+            "dropWhen": [
+              "The code is guarded by a feature query checking CSS.supports(\"field-sizing\", \"content\") or field-sizing support.",
+              "The scrollHeight measurement calculates scrollbar thumb sizes, virtual scroll windowing, or scroll progress in a long document/dialog.",
+              "The element being resized is a canvas, iframe, or modal container rather than a form input or textarea."
+            ]
+          },
+          "count": 1,
+          "findings": [
+            {
+              "file": "app.js",
+              "line": 143,
+              "message": "JavaScript dynamic scrollHeight calculation resizes form field; replace with declarative CSS field-sizing: content.",
+              "lineContent": "bioInput.style.height = (bioInput.scrollHeight + borderHeight) + 'px';"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "guideId": "validate-input-after-interaction",
+      "retrieveCommand": "npx modern-web-guidance retrieve validate-input-after-interaction",
+      "count": 1,
+      "rules": [
+        {
+          "ruleId": "validate-input-after-interaction",
+          "summary": "CSS input:invalid and textarea:invalid error-styling rules (including :not(:focus):invalid and :not(:placeholder-shown):invalid workarounds) without :user-invalid should be modernized with :user-invalid so error feedback appears only after user interaction.",
+          "verifierRubric": {
+            "keepWhen": [
+              "A CSS rule uses input:invalid or textarea:invalid (or :not(:focus):invalid / :not(:placeholder-shown):invalid) without :user-invalid to apply error styling (border, border-color, background-color, error text color, or non-none outline/box-shadow) or to reveal an adjacent/sibling error message element."
+            ],
+            "dropWhen": [
+              "The stylesheet already uses :user-invalid or guards :invalid inside @supports not selector(:user-invalid).",
+              "The rule only resets browser default :invalid styles (such as box-shadow: none or outline: none with no error border, background, or color).",
+              "The selector is already gated by a post-interaction class (.was-validated, .touched, .dirty, .submitted), combines :required:invalid (owned by required-field-feedback), or targets select:invalid (owned by select-menu-interaction)."
+            ]
+          },
+          "count": 1,
+          "findings": [
+            {
+              "file": "styles.css",
+              "line": 128,
+              "message": "CSS selector uses input:invalid or textarea:invalid which applies error styling before user interaction is complete; modernize with :user-invalid.",
+              "lineContent": "#profile-form input:invalid { border-color: var(--error); }"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "activeRuleCount": 52,
+  "activeGuideCount": 38,
+  "note": "Checked 38 guides (52 deterministic rules; ~20% of the guidance corpus). Finding 2 items here only reflects deterministic legacy patterns; use 'search <topic>' for the rest of the catalog.",
+  "skippedDocsAndTestsCount": 2
+}

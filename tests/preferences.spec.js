@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { readFile } from 'node:fs/promises';
 
-const key = 'mwg-preferences-v1';
+const key = 'mwg-modernization-v1';
 const openProfile = page => page.getByRole('button', { name: 'Edit profile' }).click();
 const savePreferences = page => page.getByRole('button', { name: 'Save preferences' }).click();
 const scheme = page => page.locator('meta[name="color-scheme"]');
@@ -62,7 +62,7 @@ test('outside dismissal is optional and discards draft when supported', async ({
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.getByRole('button', { name: 'Cancel', exact: true }).click();
   }
-  await expect(page.locator('#profile-name')).toHaveText('Jamie Morgan');
+  await expect(page.locator('#profile-name')).toHaveText('Your profile');
 });
 
 test('profile and preferences survive reload', async ({ page }) => {
@@ -117,7 +117,7 @@ test('saving profile draft preserves preferences saved by another tab', async ({
   await page.getByLabel('Display name', { exact: false }).fill('Local profile');
   await other.getByRole('radio', { name: 'Dark', exact: true }).check();
   await savePreferences(other);
-  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('mwg-preferences-v1')).theme)).toBe('dark');
+  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem('mwg-modernization-v1')).theme)).toBe('dark');
   await page.getByRole('button', { name: 'Save profile' }).click();
   await page.reload();
   await expect(page.locator('#profile-name')).toHaveText('Local profile');
