@@ -71,8 +71,9 @@
     <form id="profile-form" method="dialog" aria-labelledby="dialog-title">
       <p class="eyebrow">A LITTLE ABOUT YOU</p><h2 id="dialog-title">Edit your profile</h2>
       <p id="dialog-help" class="help">Make it yours. Canceling or dismissing discards your edits.</p>
-      <div class="field"><label for="display-name">Display name <span class="help">(required)</span></label><p id="name-help" class="help">Up to 60 characters.</p><input id="display-name" name="displayName" autocomplete="nickname" required maxlength="60" pattern=".*\S.*" aria-describedby="name-help name-error" autofocus><p id="name-error" class="error" aria-live="polite"></p></div>
+      <div class="field"><label for="display-name">Display name <span class="help">(required)</span></label><p id="name-help" class="help">Up to 60 characters.</p><input id="display-name" name="displayName" autocomplete="nickname" required maxlength="60" pattern=".*\S.*" aria-describedby="name-help" aria-invalid="false" autofocus><p id="name-error" class="error"></p></div>
       <div class="field"><label for="bio">Bio <span class="help">(optional)</span></label><p id="bio-help" class="help">A little introduction, up to 240 characters.</p><textarea id="bio" name="bio" rows="3" maxlength="240" aria-describedby="bio-help"></textarea></div>
+      <p id="profile-feedback" class="visually-hidden" role="status"></p>
       <div class="dialog-actions"><button type="submit" class="button secondary" value="cancel" formnovalidate>Cancel</button><button type="submit" class="button primary" value="save">Save profile</button></div>
     </form>
   </dialog>

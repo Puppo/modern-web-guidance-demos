@@ -1,6 +1,9 @@
-# Common Ground — modernization starting point
+# Common Ground — modernized form
 
-This is an intentionally constructed teaching variant of the preferences demo. It starts from the corrected application at d5eda25 and adds two patterns to inspect with Modern Web Guidance: an unconditional JavaScript textarea auto-resizer and premature input error styling with :invalid. A new profile starts empty so the validation timing is visible.
+This completes the exercise on `article-2/legacy`. The legacy branch deliberately introduces two teaching examples. This branch applies the retrieved Modern Web Guidance recommendations to them.
+
+- Bio grows with `field-sizing: content`, within height limits. The older-browser fallback is a standard scrollable, vertically resizable textarea.
+- The name uses `:user-invalid` for error styling. Text and ARIA feedback follow the same state, with explicit submit, correction, and dialog-reset handling.
 
 ## Run
 
@@ -11,21 +14,18 @@ npm ci
 npm start
 ```
 
-Open http://127.0.0.1:4173, choose Edit profile and inspect the empty name before typing. Enter several lines in Bio to see the auto-resizer. Local data uses the separate key `mwg-modernization-v1`. Remove that key and reload to reset the exercise.
+Open http://127.0.0.1:4173 and choose Edit profile. On a fresh profile, the empty required name starts neutral. Enter spaces and leave the field, or try Save profile, to see the error. Correct it, cancel, and reopen to inspect recovery. Paste multiple lines in Bio and then shorten the text.
 
-## Scan
+Data is local under `mwg-modernization-v1`. To reset the exercise, remove this key in DevTools and reload. After changing branches, restart the server and reload every demo tab.
+
+## Repeat the scan and checks
 
 ```sh
 npx --yes modern-web-guidance@1.0.1 legacy-scan . --json
-```
-
-The scan reports candidates that require contextual review. The matching completed exercise will be on `article-2/modernized`. After switching branches, restart the server and reload every demo tab.
-
-## Checks
-
-```sh
 npx playwright install chromium firefox webkit
 npm test -- --workers=1
 ```
 
-Historical verification files inherited from d5eda25 describe the earlier application. New modernization evidence records this exercise separately. The prepared legacy examples are not an unguided AI generation result.
+The recorded scan goes from two findings to zero. The modernized branch passes 20 scenarios on each of three engines. The report links each result to source hashes and distinguishes simulated fallback coverage from actual older-browser testing.
+
+Read [modernization evidence](verification/modernization/README.md) for the findings, guide decisions, and validation limits. Other verification files are historical records inherited from the previous preferences demo.

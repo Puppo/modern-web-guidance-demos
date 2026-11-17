@@ -1,0 +1,42 @@
+{
+  "node": "v26.13.1",
+  "engines": {
+    "chromium": {
+      "version": "158.0.8127.18",
+      "supports": {
+        "fieldSizing": true,
+        "userInvalid": true
+      }
+    },
+    "firefox": {
+      "version": "159.0",
+      "supports": {
+        "fieldSizing": true,
+        "userInvalid": true
+      }
+    },
+    "webkit": {
+      "version": "27.2",
+      "supports": {
+        "fieldSizing": true,
+        "userInvalid": true
+      }
+    }
+  },
+  "observations": {
+    "before": {
+      "empty": true,
+      "invalid": true,
+      "userInvalid": false,
+      "border": "rgb(164, 44, 41)",
+      "ariaInvalid": null
+    },
+    "after": {
+      "empty": true,
+      "invalid": true,
+      "userInvalid": false,
+      "border": "rgb(113, 128, 120)",
+      "ariaInvalid": "false"
+    }
+  }
+}

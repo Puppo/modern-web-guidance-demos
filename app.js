@@ -121,29 +121,54 @@ document.querySelector('#reset-preferences').addEventListener('click', () => {
   announce('Unsaved preferences discarded.');
 });
 
+// CSS decides when interaction warrants feedback. Keep the text and ARIA in sync.
+const profileFeedback = document.querySelector('#profile-feedback');
+let nameValidationTimer;
+let nameAnnouncementTimer;
+let nameErrorAnnounced = false;
+
 function clearNameError() {
+  clearTimeout(nameValidationTimer);
+  clearTimeout(nameAnnouncementTimer);
   nameError.textContent = '';
-  nameInput.removeAttribute('aria-invalid');
+  profileFeedback.textContent = '';
+  nameInput.setAttribute('aria-invalid', 'false');
+  nameInput.setAttribute('aria-describedby', 'name-help');
+  nameErrorAnnounced = false;
+}
+
+function showNameError(announceError = false) {
+  nameError.textContent = 'Enter a display name with at least one non-space character.';
+  nameInput.setAttribute('aria-invalid', 'true');
+  nameInput.setAttribute('aria-describedby', 'name-help name-error');
+  if (announceError && !nameErrorAnnounced) {
+    nameErrorAnnounced = true;
+    nameAnnouncementTimer = setTimeout(() => {
+      profileFeedback.textContent = nameError.textContent;
+    }, 300);
+  }
+}
+
+function syncNameFeedback() {
+  if (nameInput.matches(':user-invalid')) showNameError(true);
+  else clearNameError();
 }
 
 nameInput.addEventListener('invalid', event => {
   event.preventDefault();
-  nameError.textContent = 'Enter a display name with at least one non-space character.';
-  nameInput.setAttribute('aria-invalid', 'true');
+  clearNameError();
+  showNameError();
+  nameErrorAnnounced = true; // Focus exposes the linked error after a submit attempt.
   nameInput.focus();
 });
-nameInput.addEventListener('input', () => {
-  if (nameInput.validity.valid) clearNameError();
-});
 
-// Teaching fixture: this measurement-based resize is intentionally unconditional.
-function resizeBio() {
-  bioInput.style.height = 'auto';
-  const borderHeight = bioInput.offsetHeight - bioInput.clientHeight;
-  bioInput.style.height = (bioInput.scrollHeight + borderHeight) + 'px';
+for (const eventName of ['input', 'blur']) {
+  nameInput.addEventListener(eventName, () => {
+    clearTimeout(nameValidationTimer);
+    // Let the browser finish updating its interaction pseudo-class first.
+    nameValidationTimer = setTimeout(syncNameFeedback, 0);
+  });
 }
-
-bioInput.addEventListener('input', resizeBio);
 
 document.querySelector('#edit-profile').addEventListener('click', () => {
   clearTimeout(announcementTimer);
@@ -153,7 +178,6 @@ document.querySelector('#edit-profile').addEventListener('click', () => {
   clearNameError();
   dialog.returnValue = '';
   dialog.showModal();
-  resizeBio();
 });
 
 profileForm.addEventListener('submit', event => {

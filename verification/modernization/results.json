@@ -1,0 +1,702 @@
+{
+  "recordedAt": "2026-11-17T15:13:58.411Z",
+  "node": "v26.13.1",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "cliVersion": "1.0.1",
+  "skillRevision": "2026_11_10-47b4c80e",
+  "startingCommit": "b2b1169",
+  "provenance": "Intentionally prepared teaching variant based on d5eda25. Scanning, guide retrieval, implementation and browser checks were performed from the command line in the authoring session. Antigravity execution was not tested.",
+  "command": "npm test -- --workers=1",
+  "legacyStats": {
+    "startTime": "2026-11-17T15:09:58.968Z",
+    "duration": 42213.314999999995,
+    "expected": 45,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "modernizedStats": {
+    "startTime": "2026-11-17T15:11:40.917Z",
+    "duration": 56531.712,
+    "expected": 60,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sourceSha256": {
+    "app.js": "680304ef274184967d0471c6f70b50b30794242aa0b811b422efe07b42c2ae09",
+    "index.html": "91b4aeed02d455ad13b8e151332b0294d5a6c584e9cb8b327578467f267adb5a",
+    "styles.css": "0da76a2f3b18587d5ddb68b3c10c4726361c292e55f4f08b7e941f1f5522ec65",
+    "package-lock.json": "9a9c6b53928dfc51005a08e65e5d162daff3d593c55bf0f5ea806c93cb7fe7aa",
+    "playwright.config.js": "f513c881b7763b6a93d75e9af19d587798afecf510360152b5b40e72f20d93d0",
+    "tests/modernization.spec.js": "41a28088907b8ecd58b864428d316ed5c7c7f65a3dba4985c96d0d7dbca44fde",
+    "tests/preferences.spec.js": "e4f82eb39ade0103b41c82f526fe7bf0dbe646ad317fcbc337e97d0e8f884b0d"
+  },
+  "guideSha256": {
+    "sizing": "541f96f496ec87a891c2cc960ab16a9e6b91133b3601fa593f2eed33e4dcaaef",
+    "validation": "ccaf173e97625ec3c3c06f27937c11520c9ff8a923382494c69d67aa0cf37248"
+  },
+  "tests": [
+    {
+      "scenario": "empty name stays neutral when opened, focused, and reopened",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 740
+        }
+      ]
+    },
+    {
+      "scenario": "empty name stays neutral when opened, focused, and reopened",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1949
+        }
+      ]
+    },
+    {
+      "scenario": "empty name stays neutral when opened, focused, and reopened",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2139
+        }
+      ]
+    },
+    {
+      "scenario": "blurred invalid name gets linked text and clears as soon as corrected",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1115
+        }
+      ]
+    },
+    {
+      "scenario": "blurred invalid name gets linked text and clears as soon as corrected",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 710
+        }
+      ]
+    },
+    {
+      "scenario": "blurred invalid name gets linked text and clears as soon as corrected",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 925
+        }
+      ]
+    },
+    {
+      "scenario": "untouched submit exposes error and Cancel resets feedback on reopen",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 441
+        }
+      ]
+    },
+    {
+      "scenario": "untouched submit exposes error and Cancel resets feedback on reopen",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 515
+        }
+      ]
+    },
+    {
+      "scenario": "untouched submit exposes error and Cancel resets feedback on reopen",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 588
+        }
+      ]
+    },
+    {
+      "scenario": "bio grows, caps, shrinks and restores saved content without inline height",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 487
+        }
+      ]
+    },
+    {
+      "scenario": "bio grows, caps, shrinks and restores saved content without inline height",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 877
+        }
+      ]
+    },
+    {
+      "scenario": "bio grows, caps, shrinks and restores saved content without inline height",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 829
+        }
+      ]
+    },
+    {
+      "scenario": "disabling field-sizing leaves a usable scrolling textarea at mobile width",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 472
+        }
+      ]
+    },
+    {
+      "scenario": "disabling field-sizing leaves a usable scrolling textarea at mobile width",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 964
+        }
+      ]
+    },
+    {
+      "scenario": "disabling field-sizing leaves a usable scrolling textarea at mobile width",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 669
+        }
+      ]
+    },
+    {
+      "scenario": "existing 19 interaction checks pass in a narrow viewport",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1779
+        }
+      ]
+    },
+    {
+      "scenario": "existing 19 interaction checks pass in a narrow viewport",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2196
+        }
+      ]
+    },
+    {
+      "scenario": "existing 19 interaction checks pass in a narrow viewport",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2082
+        }
+      ]
+    },
+    {
+      "scenario": "keyboard opens, traverses, cancels and restores focus",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 244
+        }
+      ]
+    },
+    {
+      "scenario": "keyboard opens, traverses, cancels and restores focus",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 983
+        }
+      ]
+    },
+    {
+      "scenario": "keyboard opens, traverses, cancels and restores focus",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 541
+        }
+      ]
+    },
+    {
+      "scenario": "radio arrows and checkbox space retain native behavior",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 187
+        }
+      ]
+    },
+    {
+      "scenario": "radio arrows and checkbox space retain native behavior",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2120
+        }
+      ]
+    },
+    {
+      "scenario": "radio arrows and checkbox space retain native behavior",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 370
+        }
+      ]
+    },
+    {
+      "scenario": "outside dismissal is optional and discards draft when supported",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 225
+        }
+      ]
+    },
+    {
+      "scenario": "outside dismissal is optional and discards draft when supported",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 548
+        }
+      ]
+    },
+    {
+      "scenario": "outside dismissal is optional and discards draft when supported",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 371
+        }
+      ]
+    },
+    {
+      "scenario": "profile and preferences survive reload",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 352
+        }
+      ]
+    },
+    {
+      "scenario": "profile and preferences survive reload",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1284
+        }
+      ]
+    },
+    {
+      "scenario": "profile and preferences survive reload",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 597
+        }
+      ]
+    },
+    {
+      "scenario": "theme follows system while explicit override survives changes",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 205
+        }
+      ]
+    },
+    {
+      "scenario": "theme follows system while explicit override survives changes",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 526
+        }
+      ]
+    },
+    {
+      "scenario": "theme follows system while explicit override survives changes",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 531
+        }
+      ]
+    },
+    {
+      "scenario": "clean tabs synchronize saved preferences",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 369
+        }
+      ]
+    },
+    {
+      "scenario": "clean tabs synchronize saved preferences",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 780
+        }
+      ]
+    },
+    {
+      "scenario": "clean tabs synchronize saved preferences",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 802
+        }
+      ]
+    },
+    {
+      "scenario": "saving local preferences preserves a profile saved by another tab",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 594
+        }
+      ]
+    },
+    {
+      "scenario": "saving local preferences preserves a profile saved by another tab",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1072
+        }
+      ]
+    },
+    {
+      "scenario": "saving local preferences preserves a profile saved by another tab",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1400
+        }
+      ]
+    },
+    {
+      "scenario": "saving profile draft preserves preferences saved by another tab",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 427
+        }
+      ]
+    },
+    {
+      "scenario": "saving profile draft preserves preferences saved by another tab",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 841
+        }
+      ]
+    },
+    {
+      "scenario": "saving profile draft preserves preferences saved by another tab",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1165
+        }
+      ]
+    },
+    {
+      "scenario": "blocked storage at startup leaves editing usable",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 374
+        }
+      ]
+    },
+    {
+      "scenario": "blocked storage at startup leaves editing usable",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 664
+        }
+      ]
+    },
+    {
+      "scenario": "blocked storage at startup leaves editing usable",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 614
+        }
+      ]
+    },
+    {
+      "scenario": "corrupt saved data is recoverable",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 209
+        }
+      ]
+    },
+    {
+      "scenario": "corrupt saved data is recoverable",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 459
+        }
+      ]
+    },
+    {
+      "scenario": "corrupt saved data is recoverable",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 437
+        }
+      ]
+    },
+    {
+      "scenario": "without JavaScript system theme works and editing is explained",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 346
+        }
+      ]
+    },
+    {
+      "scenario": "without JavaScript system theme works and editing is explained",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 945
+        }
+      ]
+    },
+    {
+      "scenario": "without JavaScript system theme works and editing is explained",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 848
+        }
+      ]
+    },
+    {
+      "scenario": "doubled text reflows without page or dialog overflow",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 250
+        }
+      ]
+    },
+    {
+      "scenario": "doubled text reflows without page or dialog overflow",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 453
+        }
+      ]
+    },
+    {
+      "scenario": "doubled text reflows without page or dialog overflow",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 448
+        }
+      ]
+    },
+    {
+      "scenario": "canceling a profile draft reveals the other tab update",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 442
+        }
+      ]
+    },
+    {
+      "scenario": "canceling a profile draft reveals the other tab update",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1542
+        }
+      ]
+    },
+    {
+      "scenario": "canceling a profile draft reveals the other tab update",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1124
+        }
+      ]
+    },
+    {
+      "scenario": "discarding a local preference draft restores the latest remote settings",
+      "project": "chromium",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 527
+        }
+      ]
+    },
+    {
+      "scenario": "discarding a local preference draft restores the latest remote settings",
+      "project": "firefox",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1055
+        }
+      ]
+    },
+    {
+      "scenario": "discarding a local preference draft restores the latest remote settings",
+      "project": "webkit",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1062
+        }
+      ]
+    }
+  ]
+}
